@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     async deleteNotifier (notifier) {
-      await fetch(`${process.env.API_URL}/notifiers/${notifier.id}`, { method: 'DELETE' })
+      await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/notifiers/${notifier.id}`, { method: 'DELETE' })
       const index = this.$store.state.notifiers.findIndex(n => n.id === notifier.id)
       this.$store.state.notifiers.splice(index, 1)
     },
