@@ -31,16 +31,16 @@ export default {
     SearchJourneys
 },
   async mounted() {
-    const travels = await fetch(`${process.env.API_URL}/travels`)
+    const travels = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api`)
     this.$store.state.travels = await travels.json()
 
-    const crons = await fetch(`${process.env.API_URL}/crons`)
+    const crons = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api`)
     this.$store.state.crons = await crons.json()
 
-    const notifiers = await fetch(`${process.env.API_URL}/notifiers`)
+    const notifiers = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api`)
     this.$store.state.notifiers = await notifiers.json()
 
-    const bookers = await fetch(`${process.env.API_URL}/bookers`)
+    const bookers = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api`)
     this.$store.state.bookers = await bookers.json()
   }
 }
