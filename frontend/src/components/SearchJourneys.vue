@@ -173,7 +173,7 @@
         bookLoading: false,
         date: new Date(),
         untilDate: new Date(),
-        autocompleteEndpoint: `${process.env.API_URL}/stations/autocomplete?searchTerm=`
+        autocompleteEndpoint: `https://tgvmax-bot-backend-production.up.railway.app/api/stations/autocomplete?searchTerm=`
       }
     },
     watch: {
@@ -205,7 +205,7 @@
           params.untilDate = this.untilDate.toLocaleDateString('sv')
         }
         const result = await fetch(
-          `${process.env.API_URL}/travels/journeys?${new URLSearchParams(params)}`
+          `https://tgvmax-bot-backend-production.up.railway.app/api/travels/journeys?${new URLSearchParams(params)}`
         )
         const decoder = new TextDecoder()
         const reader = result.body.getReader()
@@ -220,7 +220,7 @@
       },
       async book (journey) {
         this.bookLoading = true
-        const res = await fetch(`${process.env.API_URL}/travels/journeys/book`, {
+        const res = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/travels/journeys/book`, {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
