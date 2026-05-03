@@ -85,7 +85,7 @@
     },
     methods: {
       async submitBooker () {
-        const res = await fetch(`${process.env.API_URL}/bookers`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/bookers`, {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
