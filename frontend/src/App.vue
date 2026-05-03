@@ -33,8 +33,6 @@ export default {
  async mounted() {
     const travels = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/travels`)
     this.$store.state.travels = await travels.json()
-    const crons = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/crons`)
-    this.$store.state.crons = await crons.json()
     const notifiers = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/notifiers`)
     this.$store.state.notifiers = await notifiers.json()
     const bookers = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/bookers`)
