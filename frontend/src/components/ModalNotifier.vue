@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     async submitNotifier () {
-      const res = await fetch(`${process.env.API_URL}/notifiers`, {
+      const res = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/notifiers`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
