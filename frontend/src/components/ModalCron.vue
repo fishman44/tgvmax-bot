@@ -183,7 +183,7 @@ export default {
       booker: null,
       book: true,
       maxTravels: null,
-      autocompleteEndpoint: `${process.env.API_URL}/stations/autocomplete?searchTerm=`
+      autocompleteEndpoint: `https://tgvmax-bot-backend-production.up.railway.app/api/stations/autocomplete?searchTerm=`
     }
   },
   computed: {
@@ -201,7 +201,7 @@ export default {
       }
     },
     async submitCron () {
-      const res = await fetch(`${process.env.API_URL}/crons`, {
+      const res = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/crons`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
