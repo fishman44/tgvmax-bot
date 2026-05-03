@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     async deleteCron (cron) {
-      await fetch(`${process.env.API_URL}/crons/${cron.id}`, { method: 'DELETE' })
+      await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/crons/${cron.id}`, { method: 'DELETE' })
       const index = this.$store.state.crons.findIndex(t => t.id === cron.id)
       this.$store.state.crons.splice(index, 1)
     },
