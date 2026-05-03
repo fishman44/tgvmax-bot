@@ -99,7 +99,7 @@ export default {
       if (travel.cron && !confirm(`Ce travel appartient a une Cron, il ne sera pas recréé s'il est supprimé. Etes-vous sur?`)) {
         return
       }
-      await fetch(`${process.env.API_URL}/travels/${travel.id}`, { method: 'DELETE' })
+      await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/travels/${travel.id}`, { method: 'DELETE' })
       const index = this.$store.state.travels.findIndex(t => t.id === travel.id)
       this.$store.state.travels.splice(index, 1)
     },
