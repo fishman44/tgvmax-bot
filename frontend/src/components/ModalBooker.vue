@@ -85,7 +85,7 @@
     },
     methods: {
       async submitBooker () {
-        const res = await fetch(`${process.env.API_URL}/bookers`, {
+        const res = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/bookers`, {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
