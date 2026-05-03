@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     async deleteBooker (booker) {
-      await fetch(`${process.env.API_URL}/bookers/${booker.id}`, { method: 'DELETE' })
+      await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/bookers/${booker.id}`, { method: 'DELETE' })
       const index = this.$store.state.bookers.findIndex(n => n.id === booker.id)
       this.$store.state.bookers.splice(index, 1)
     },
