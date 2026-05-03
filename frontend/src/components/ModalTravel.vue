@@ -166,7 +166,7 @@ export default {
       notifier: null,
       booker: null,
       book: true,
-      autocompleteEndpoint: `${process.env.API_URL}/stations/autocomplete?searchTerm=`
+      autocompleteEndpoint: `https://tgvmax-bot-backend-production.up.railway.app/api/stations/autocomplete?searchTerm=`
     }
   },
   computed: {
@@ -184,7 +184,7 @@ export default {
       }
     },
     async submitTravel () {
-      const res = await fetch(`${process.env.API_URL}/travels`, {
+      const res = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/travels`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -203,7 +203,7 @@ export default {
           book: this.book
         })
       })
-      const travels = await fetch(`${process.env.API_URL}/travels`)
+      const travels = await fetch(`https://tgvmax-bot-backend-production.up.railway.app/api/travels`)
       this.$store.state.travels = await travels.json()
       this.$emit('close')
     },
